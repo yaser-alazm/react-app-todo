@@ -1,9 +1,16 @@
 import {useState, useEffect} from 'react'
 import './App.css';
+import Loader from './components/Loader'
 
 function App() {
   const [todos, setTodos] = useState([])
   const [error, setError] = useState({})
+
+  interface Todo {
+    title: string;
+    id: number;
+    completed: boolean;
+  }
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/todos')
@@ -13,7 +20,7 @@ function App() {
   }, [])
   return (
     <div className="App">
-      Hello World!
+      {todos.length > 0 ? todos.map((todo:Todo) => console.log(todo.title)) : (<Loader/>)}
     </div>
   );
 }
