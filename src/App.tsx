@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
 import './App.css';
 import Loader from './components/Loader'
+import Todo from './components/Todo'
 
 function App() {
   const [todos, setTodos] = useState([])
@@ -20,7 +21,7 @@ function App() {
   }, [])
   return (
     <div className="App">
-      {todos.length > 0 ? todos.map((todo:Todo) => console.log(todo.title)) : (<Loader/>)}
+      {todos.length > 0 ? todos.map((todo:Todo) => <Todo todo={todo} prop1 prop2 />) : (<Loader/>)}
     </div>
   );
 }
