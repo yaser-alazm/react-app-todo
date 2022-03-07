@@ -8,10 +8,6 @@ interface Props {
     handleDelete: (id: number) => void;
 }
 
-const todoStyle ={
-
-}
-
 
 const Todo:React.FC<Props> = ({todo, index, handleCompleted, handleDelete}) => {
     return (
